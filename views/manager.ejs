@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/" >Danh Sách</a>
+    <hr>
+    <form action="/create" enctype="multipart/form-data" method="post">
+      <div>Mã ô tô : <input name="maoto" value=" <%= data.maoto %>"></div><br>
+      <div>Nhãn Hiệu : <input name="nhanhieu" value=" <%= data.nhanhieu %>"></div><br>
+      <div>Năm sản xuất : <input name="namsanxuat" value="<%= data.namsanxuat %>"></div><br>
+      <div>Giá gốc : <input name="giagoc" value="<%= data.giagoc %>"></div><br>
+      <input name="file" type="file"><br><br>
+      <button type="submit">Thêm</button>
+    </form>
+
+    <% for(var i = 0; i < data.length; i++) { %>
+      <hr>
+      <img src="/images/<%= data[i].fileName %>" height="100px" width="100px" style="float: left">
+      <div> ID:  <%= data[i]._id %> </div>
+      <div> Mã ô tô:  <%= data[i].maoto %> </div>
+      <div> Nhãn Hiệu:  <%= data[i].nhanhieu %> </div>
+      <div> Năm sản xuất:  <%= data[i].namsanxuat %> </div>
+      <div> Giá gốc:  <%= data[i].giagoc %> </div>
+      <br>
+
+    <a href="/delete/?id=<%= data[i]._id %>">Xóa</a>
+    <a href="/updateForm/?id=<%= data[i]._id %>">Sửa</a>
+    <% } %>
+    <hr>
+  </body>
+</html>

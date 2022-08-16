@@ -1,0 +1,28 @@
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+</head>
+<body>
+
+ <a href="/manager" >Quản Lý</a>
+<form action="/searchName" enctype="multipart/form-data" method="post">
+ <div>Tim kiem : <input name="search" value=" <%= data.search %>"></div><br>
+ <input  type="submit" value="Submit">
+</form>
+
+
+<a href="/sort">SX</a>
+ <image src=""></image>
+<% for (var i = 0; i < data.length; i++) {%>
+  <hr>
+  <img src="/images/<%= data[i].fileName %>" height="100px" width="100px" style="float: left">
+  <div> ID:  <%= data[i]._id %> </div>
+  <div> Mã ô tô:  <%= data[i].maoto %> </div>
+  <div> Nhãn Hiệu:  <%= data[i].nhanhieu %> </div>
+  <div> Năm sản xuất:  <%= data[i].namsanxuat %> </div>
+  <div> Giá gốc:  <%= data[i].giagoc %> </div>
+  <a href="/delete/?id=<%= data[i]._id %>">Xóa</a>
+ <br>
+<%}%>
+<hr>
+</body>

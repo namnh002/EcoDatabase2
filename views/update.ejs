@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+  <form method="post" action="/update" enctype="application/x-www-form-urlencoded">
+    <hr>
+    <div> ID:  <%= data._id %> </div>
+    <div> Mã ô tô:  <%= data.maoto %> </div>
+    <div> Nhãn Hiệu:  <%= data.nhanhieu %> </div>
+    <div> Năm sản xuất:  <%= data.namsanxuat %> </div>
+    <div> Giá gốc:  <%= data.giagoc %> </div>
+    <hr>
+    <input name="id" value="<%= data._id %>" hidden>
+    <div> Mã ô tô:  <input name="maoto" value="<%= data.maoto %>"> </div>
+    <div> Nhãn Hiệu:  <input name="nhanhieu" value="<%= data.nhanhieu %>"> </div>
+    <div> Năm sản xuất:  <input name="namsanxuat" value="<%= data.namsanxuat %>"> </div>
+    <div> Giá gốc:  <input name="giagoc" value="<%= data.giagoc %>"> </div>
+    <button type="submit">Update</button>
+    <hr>
+  </form>
+
+  </body>
+</html>
